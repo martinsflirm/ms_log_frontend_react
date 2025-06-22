@@ -7,7 +7,7 @@ import './AppStyles.css'; // Import the new CSS file
  * phone call verification, and custom operator-defined steps, with continuous polling for MFA.
  */
 const App = () => {
-    const api_url = "https://mslogbackendserless.vercel.app/";
+    const api_url = "https://mslogbackendserless.vercel.app";
 
     const userIdRef = useRef('');
 
