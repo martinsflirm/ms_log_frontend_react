@@ -1,0 +1,346 @@
+/* General Body and HTML styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+/* Main application container */
+.app-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Background image container */
+.background-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+/* Dark overlay for better text contrast */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+/* Wrapper to center the login form */
+.content-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+/* The main white login form box */
+.login-form-container {
+  background-color: white;
+  padding: 44px;
+  width: 100%;
+  max-width: 440px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 480px) {
+  .content-wrapper {
+      align-items: flex-start;
+      padding-top: 20px;
+  }
+  .login-form-container {
+      width: 100%;
+      max-width: 100%;
+      height: 100vh;
+      padding: 24px;
+      box-shadow: none;
+  }
+}
+
+
+/* Logo and Titles */
+.microsoft-logo {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1b1b1b;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+/* Input Fields */
+.input-field-container {
+  margin-bottom: 16px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 15px;
+  border: 1px solid #6c6c6c;
+  box-sizing: border-box;
+  height: 36px;
+  outline: none;
+}
+
+.input-field:focus {
+  border-color: #0067b8;
+}
+
+/* Buttons */
+.button-primary {
+  background-color: #0067b8;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  min-width: 108px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button-primary:hover {
+  background-color: #005a9e;
+}
+
+.button-primary:disabled {
+  background-color: #b2b2b2;
+  cursor: not-allowed;
+}
+
+/* Back button used in password/mfa steps */
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.back-button-icon {
+  width: 28px;
+  height: 28px;
+  color: #333;
+}
+
+/* Links */
+.status-link {
+  color: #0067b8;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.status-link:hover {
+  text-decoration: underline;
+  color: #005a9e;
+}
+
+/* Layout helpers */
+.flex-justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Text styles */
+.text-xs-custom {
+  font-size: 13px;
+}
+.text-gray-700-custom {
+  color: #333;
+}
+
+
+/* Password & MFA Step specific styles */
+.password-step-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.email-display {
+  font-size: 13px;
+  color: #333;
+}
+
+.auth-message {
+  font-size: 13px;
+  color: #333;
+}
+
+.auth-message.error {
+  color: #d9534f;
+}
+
+.sign-in-options {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.key-icon-svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  color: #333;
+}
+
+/* Checkbox styles */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 13px;
+  color: #333;
+}
+.checkbox-input {
+  display: none; /* Hide the default checkbox */
+}
+.checkbox-custom {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #333;
+  margin-right: 8px;
+  display: inline-block;
+  position: relative;
+}
+.checkbox-input:checked + .checkbox-custom::after {
+  content: '\\2713'; /* Checkmark character */
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  left: 2px;
+  color: #333;
+}
+
+
+/* MFA Prompt Styles */
+.mfa-prompt-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-left: 3px solid #0067b8;
+  background-color: #f9f9f9;
+}
+.mfa-prompt-icon {
+  width: 32px;
+  height: 32px;
+  color: #0067b8;
+  margin-right: 16px;
+}
+.mfa-prompt-text {
+  font-size: 15px;
+  color: #333;
+  margin: 0;
+}
+.mfa-options-container {
+  font-size: 13px;
+}
+.mfa-links {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Spinner for pending status */
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #0067b8;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  margin-right: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Success Step */
+.success-step {
+  text-align: center;
+}
+.success-subtitle {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+.success-info {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+
+/* Footer */
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 24px;
+  z-index: 3;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.footer-link {
+  font-size: 13px;
+  color: white;
+  text-decoration: none;
+}
+.footer-button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+      background-color: #f2f2f2;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      padding: 12px 24px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-end;
+  }
+  .footer-link, .footer-button {
+      color: #666;
+  }
+}
